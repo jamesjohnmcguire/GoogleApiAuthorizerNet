@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+[assembly: CLSCompliant(true)]
+
+namespace DigitalZenWorks.GoogleApiAuthorizer
+{
+	public class Authorizer
+	{
+	}
+}
