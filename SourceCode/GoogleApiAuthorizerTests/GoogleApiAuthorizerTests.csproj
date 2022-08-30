@@ -16,6 +16,8 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Google.Apis" Version="1.57.0" />
+		<PackageReference Include="Google.Apis.Drive.v3" Version="1.57.0.2746" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0" />
 		<PackageReference Include="NUnit" Version="3.13.3" />
 		<PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
@@ -29,6 +31,10 @@
 		<AdditionalFiles Include="../stylecop.json" />
 		<CodeAnalysisDictionary Include="../CodeAnalysis.ruleset" />
 		<None Include="../.editorconfig" Link="../.editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\GoogleApiAuthorizer\GoogleApiAuthorizer.csproj" />
 	</ItemGroup>
 
 </Project>
