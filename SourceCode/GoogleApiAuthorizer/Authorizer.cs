@@ -308,14 +308,14 @@ namespace DigitalZenWorks.GoogleApiAuthorizer
 		/// <param name="redirectUrl">The URL which the authorization will
 		/// complete to.</param>
 		/// <returns>A google API client object.</returns>
-		public object Authorize(
+		public BaseClientService.Initializer Authorize(
 			Mode mode,
 			string credentialsFilePath,
 			string serviceAccountFilePath,
 			string tokensFilePath,
 			Uri redirectUrl = null)
 		{
-			object client = Authorize(
+			BaseClientService.Initializer client = Authorize(
 				mode,
 				credentialsFilePath,
 				serviceAccountFilePath,
