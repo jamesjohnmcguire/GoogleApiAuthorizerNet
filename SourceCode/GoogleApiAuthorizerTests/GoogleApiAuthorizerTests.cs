@@ -59,7 +59,88 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		}
 
 		/// <summary>
-		/// Service Account Success Test.
+		/// Service Account Direct No File Or Environement Variable Fail Test.
+		/// </summary>
+		[Test]
+
+		public void TestServiceAccountDirectNoFileOrEnvironementVariableFail()
+		{
+			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
+			Environment.SetEnvironmentVariable(environmentVariable, null);
+
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			BaseClientService.Initializer client =
+				Authorizer.AuthorizeServiceAccount(
+					string.Empty,
+					"Google Drive API File Uploader",
+					scopes);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Service Account Direct Environment Variable Success Test.
+		/// </summary>
+		[Test]
+
+		public void TestServiceAccountDirectEnvironmentVariableSuccess()
+		{
+			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
+			Environment.SetEnvironmentVariable(
+				environmentVariable, serviceAccountFilePath);
+
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			BaseClientService.Initializer client =
+				Authorizer.AuthorizeServiceAccount(
+					null,
+					"Google Drive API File Uploader",
+					scopes);
+
+			Assert.NotNull(client);
+
+			using DriveService driveService = new (client);
+
+			var about = driveService.About;
+
+			var response = about.Get();
+			Assert.NotNull(response);
+
+			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
+				response);
+		}
+
+		/// <summary>
+		/// Service Account Direct File Success Test.
+		/// </summary>
+		[Test]
+
+		public void TestServiceAccountDirectFileSuccess()
+		{
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			BaseClientService.Initializer client =
+				Authorizer.AuthorizeServiceAccount(
+					serviceAccountFilePath,
+					"Google Drive API File Uploader",
+					scopes);
+
+			Assert.NotNull(client);
+
+			using DriveService driveService = new (client);
+
+			var about = driveService.About;
+
+			var response = about.Get();
+			Assert.NotNull(response);
+
+			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
+				response);
+		}
+
+		/// <summary>
+		/// Service Account Environment Variable Success Test.
 		/// </summary>
 		[Test]
 
@@ -96,7 +177,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		}
 
 		/// <summary>
-		/// Service Account Success Test.
+		/// Service Account File Success Test.
 		/// </summary>
 		[Test]
 
@@ -129,7 +210,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		}
 
 		/// <summary>
-		/// Service Account Fail No File Or Environement Variable Test.
+		/// Service Account No File Or Environement Variable Fail Test.
 		/// </summary>
 		[Test]
 
