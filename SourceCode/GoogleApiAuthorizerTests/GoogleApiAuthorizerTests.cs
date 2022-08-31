@@ -59,6 +59,45 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		}
 
 		/// <summary>
+		/// Discover Fail Test.
+		/// </summary>
+		[Test]
+		public void TestDiscoverFail()
+		{
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			BaseClientService.Initializer client = Authorizer.Authorize(
+				Mode.Discover,
+				null,
+				null,
+				null,
+				"Google Drive API File Uploader",
+				scopes);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Discover Object Fail Test.
+		/// </summary>
+		[Test]
+		public void TestDiscoverObjectFail()
+		{
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			BaseClientService.Initializer client = authorizer.Authorize(
+				Mode.Discover,
+				null,
+				null,
+				null);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
 		/// Service Account Direct No File Or Environement Variable Fail Test.
 		/// </summary>
 		[Test]
