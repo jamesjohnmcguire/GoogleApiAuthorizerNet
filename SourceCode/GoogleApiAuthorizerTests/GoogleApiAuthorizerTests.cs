@@ -204,7 +204,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 
 			Assert.NotNull(client);
 
-			using DriveService driveService = new(client);
+			using DriveService driveService = new (client);
 
 			var about = driveService.About;
 
@@ -270,6 +270,54 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					scopes,
 					null,
 					false);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Service Account No File Or Environement Variable Fail Test.
+		/// </summary>
+		[Test]
+
+		public void TestServiceAccountObjectNoFileOrEnvironementVariableFail()
+		{
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
+			Environment.SetEnvironmentVariable(environmentVariable, null);
+
+			BaseClientService.Initializer client =
+				authorizer.Authorize(
+					Mode.ServiceAccount,
+					null,
+					string.Empty,
+					null,
+					null);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Service Account No File Or Environement Variable Fail Test.
+		/// </summary>
+		[Test]
+
+		public void
+			TestServiceAccountObjectDirectNoFileOrEnvironementVariableFail()
+		{
+			string[] scopes = { "https://www.googleapis.com/auth/drive" };
+
+			Authorizer authorizer =
+				new("Google Drive API File Uploader", scopes, false);
+
+			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
+			Environment.SetEnvironmentVariable(environmentVariable, null);
+
+			BaseClientService.Initializer client =
+				authorizer.AuthorizeServiceAccount(string.Empty);
 
 			Assert.Null(client);
 		}
