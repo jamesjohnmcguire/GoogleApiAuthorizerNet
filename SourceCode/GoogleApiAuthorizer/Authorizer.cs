@@ -633,12 +633,21 @@ namespace DigitalZenWorks.GoogleApiAuthorizer
 
 				if (credentialsRequired == true)
 				{
-					GoogleCredential credentialedAccount =
-						GoogleCredential.FromFile(credentialsFilePath);
-					credentialedAccount =
-						credentialedAccount.CreateScoped(scopes);
+					try
+					{
+						GoogleCredential credentialedAccount =
+							GoogleCredential.FromFile(credentialsFilePath);
+						credentialedAccount =
+							credentialedAccount.CreateScoped(scopes);
 
-					initializer.HttpClientInitializer = credentialedAccount;
+						initializer.HttpClientInitializer = credentialedAccount;
+
+						baseClient = initializer;
+					}
+					catch (InvalidOperationException exception)
+					{
+						Log.Error(exception.ToString());
+					}
 				}
 
 				// baseClient.setAccessType("offline");
