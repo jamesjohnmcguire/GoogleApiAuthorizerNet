@@ -355,10 +355,10 @@ namespace DigitalZenWorks.GoogleApiAuthorizer
 		/// <param name="serviceAccountFilePath">The service account
 		/// credentials json file.</param>
 		/// <returns>A google API client object.</returns>
-		public object AuthorizeServiceAccount(
+		public BaseClientService.Initializer AuthorizeServiceAccount(
 			string serviceAccountFilePath)
 		{
-			object client = AuthorizeServiceAccount(
+			BaseClientService.Initializer client = AuthorizeServiceAccount(
 				serviceAccountFilePath,
 				Name,
 				Scopes);
