@@ -3,6 +3,7 @@
 // </copyright>
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 
 namespace DigitalZenWorks.GoogleApiAuthorizer
@@ -49,6 +50,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer
 		/// Gets or sets the created property.
 		/// </summary>
 		/// <value>The created property.</value>
+		[JsonConverter(typeof(UnixDateTimeConverter))]
 		public DateTime Created { get; set; }
 	}
 }
