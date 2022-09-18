@@ -17,6 +17,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 	/// </summary>
 	public class GoogleApiAuthorizerTests
 	{
+		private string credentialsFilePath;
 		private string serviceAccountFilePath;
 		private string[] scopes = { "https://www.googleapis.com/auth/drive" };
 		private string tokensFilePath;
@@ -32,6 +33,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				Environment.SpecialFolderOption.Create);
 			string dataPath = baseDataDirectory +
 				@"\DigitalZenWorks\GoogleApiAuthorizer";
+			credentialsFilePath = dataPath + @"\Credentials.json";
 			serviceAccountFilePath = dataPath + @"\ServiceAccount.json";
 			tokensFilePath = dataPath + @"\Tokens.json";
 		}
@@ -305,7 +307,6 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 			Assert.Null(client);
 		}
 
-
 		/// <summary>
 		/// Tokens No Credentials Fail Test.
 		/// </summary>
@@ -323,5 +324,23 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 			Assert.Null(client);
 		}
 
+		/// <summary>
+		/// Tokens No tokens Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensNoTokensFail()
+		{
+			BaseClientService.Initializer client = Authorizer.Authorize(
+				Mode.Token,
+				credentialsFilePath,
+				null,
+				string.Empty,
+				"Google Drive API File Uploader",
+				scopes,
+				null,
+				false);
+
+			Assert.Null(client);
+		}
 	}
 }
