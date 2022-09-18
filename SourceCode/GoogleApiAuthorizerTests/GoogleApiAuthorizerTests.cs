@@ -53,7 +53,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// Sanity Check Test.
 		/// </summary>
 		[Test]
-		public void TestSanityCheck()
+		public void SanityCheck()
 		{
 			Assert.Pass();
 		}
@@ -62,7 +62,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// Discover Fail Test.
 		/// </summary>
 		[Test]
-		public void TestDiscoverFail()
+		public void DiscoverFail()
 		{
 			string[] scopes = { "https://www.googleapis.com/auth/drive" };
 
@@ -81,7 +81,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// Discover Object Fail Test.
 		/// </summary>
 		[Test]
-		public void TestDiscoverObjectFail()
+		public void DiscoverObjectFail()
 		{
 			string[] scopes = { "https://www.googleapis.com/auth/drive" };
 
@@ -102,7 +102,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountDirectNoFileOrEnvironementVariableFail()
+		public void ServiceAccountDirectNoFileOrEnvironementVariableFail()
 		{
 			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
 			Environment.SetEnvironmentVariable(environmentVariable, null);
@@ -123,7 +123,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountDirectEnvironmentVariableSuccess()
+		public void ServiceAccountDirectEnvironmentVariableSuccess()
 		{
 			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
 			Environment.SetEnvironmentVariable(
@@ -155,7 +155,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountDirectFileSuccess()
+		public void ServiceAccountDirectFileSuccess()
 		{
 			string[] scopes = { "https://www.googleapis.com/auth/drive" };
 
@@ -183,7 +183,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountEnvironmentVariableSuccess()
+		public void ServiceAccountEnvironmentVariableSuccess()
 		{
 			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
 			Environment.SetEnvironmentVariable(
@@ -220,7 +220,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountFileSuccess()
+		public void ServiceAccountFileSuccess()
 		{
 			string[] scopes = { "https://www.googleapis.com/auth/drive" };
 
@@ -253,7 +253,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountNoFileOrEnvironementVariableFail()
+		public void ServiceAccountNoFileOrEnvironementVariableFail()
 		{
 			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
 			Environment.SetEnvironmentVariable(environmentVariable, null);
@@ -279,7 +279,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		/// </summary>
 		[Test]
 
-		public void TestServiceAccountObjectNoFileOrEnvironementVariableFail()
+		public void ServiceAccountObjectNoFileOrEnvironementVariableFail()
 		{
 			string[] scopes = { "https://www.googleapis.com/auth/drive" };
 
@@ -306,7 +306,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		[Test]
 
 		public void
-			TestServiceAccountObjectDirectNoFileOrEnvironementVariableFail()
+			ServiceAccountObjectDirectNoFileOrEnvironementVariableFail()
 		{
 			string[] scopes = { "https://www.googleapis.com/auth/drive" };
 
