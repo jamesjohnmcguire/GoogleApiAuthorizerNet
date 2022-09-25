@@ -264,6 +264,41 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		}
 
 		/// <summary>
+		/// Service Account Environment Variable Success Test.
+		/// </summary>
+		[Test]
+
+		public void ServiceAccountObjectEnvironmentVariableSuccess()
+		{
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			string environmentVariable = "GOOGLE_APPLICATION_CREDENTIALS";
+			Environment.SetEnvironmentVariable(
+				environmentVariable, serviceAccountFilePath);
+
+			BaseClientService.Initializer client =
+				authorizer.Authorize(
+					Mode.ServiceAccount,
+					null,
+					string.Empty,
+					null,
+					null);
+
+			Assert.NotNull(client);
+
+			using DriveService driveService = new(client);
+
+			var about = driveService.About;
+
+			var response = about.Get();
+			Assert.NotNull(response);
+
+			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
+				response);
+		}
+
+		/// <summary>
 		/// Service Account No File Or Environement Variable Fail Test.
 		/// </summary>
 		[Test]
