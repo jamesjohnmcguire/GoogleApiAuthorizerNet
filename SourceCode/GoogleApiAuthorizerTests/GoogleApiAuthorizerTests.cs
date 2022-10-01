@@ -343,6 +343,36 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		}
 
 		/// <summary>
+		/// Tokens Direct No Credentials Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensDirectNoCredentialsFail()
+		{
+			BaseClientService.Initializer client = Authorizer.AuthorizeToken(
+				null,
+				tokensFilePath,
+				"Google Drive API File Uploader",
+				scopes);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Tokens Direct No tokens Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensDirectNoTokensFail()
+		{
+			BaseClientService.Initializer client = Authorizer.AuthorizeToken(
+				credentialsFilePath,
+				string.Empty,
+				"Google Drive API File Uploader",
+				scopes);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
 		/// Tokens No Credentials Fail Test.
 		/// </summary>
 		[Test]
@@ -374,6 +404,74 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				scopes,
 				null,
 				false);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Tokens Object Direct No Credentials Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensObjectDirectNoCredentialsFail()
+		{
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			BaseClientService.Initializer client = authorizer.AuthorizeToken(
+				null,
+				tokensFilePath);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Tokens Object Direct No tokens Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensObjectDirectNoTokensFail()
+		{
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			BaseClientService.Initializer client = authorizer.AuthorizeToken(
+				credentialsFilePath,
+				string.Empty);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Tokens Object No Credentials Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensObjectNoCredentialsFail()
+		{
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			BaseClientService.Initializer client = authorizer.Authorize(
+				Mode.Token,
+				null,
+				null,
+				tokensFilePath);
+
+			Assert.Null(client);
+		}
+
+		/// <summary>
+		/// Tokens Object No tokens Fail Test.
+		/// </summary>
+		[Test]
+		public void TokensObjectNoTokensFail()
+		{
+			Authorizer authorizer =
+				new ("Google Drive API File Uploader", scopes, false);
+
+			BaseClientService.Initializer client = authorizer.Authorize(
+				Mode.Token,
+				credentialsFilePath,
+				null,
+				string.Empty);
 
 			Assert.Null(client);
 		}
