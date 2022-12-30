@@ -12,6 +12,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryDocPatcher", "GoogleApiClient\Src\Tools\DiscoveryDocPatcher\DiscoveryDocPatcher.csproj", "{719803CC-483F-4CED-BBB3-97C7E993DA83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryDocDownloader", "GoogleApiClient\Src\Tools\DiscoveryDocDownloader\DiscoveryDocDownloader.csproj", "{480A7D53-D645-450D-A227-755D9D2F6E56}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Apis", "GoogleApiClient\Src\Support\Google.Apis\Google.Apis.csproj", "{A82B4ED3-3208-48B9-B9D9-1DAD20CC58C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Apis.Auth", "GoogleApiClient\Src\Support\Google.Apis.Auth\Google.Apis.Auth.csproj", "{E59C251E-45F5-4569-B357-47BE0CCE8CDC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Apis.Core", "GoogleApiClient\Src\Support\Google.Apis.Core\Google.Apis.Core.csproj", "{2C12F91C-F0A9-4A70-B463-1D9F8A2555EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +36,26 @@ Global
 		{4ECF3A81-6BD1-4C31-84E7-48C43DB0AA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ECF3A81-6BD1-4C31-84E7-48C43DB0AA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ECF3A81-6BD1-4C31-84E7-48C43DB0AA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{719803CC-483F-4CED-BBB3-97C7E993DA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719803CC-483F-4CED-BBB3-97C7E993DA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719803CC-483F-4CED-BBB3-97C7E993DA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719803CC-483F-4CED-BBB3-97C7E993DA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{480A7D53-D645-450D-A227-755D9D2F6E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480A7D53-D645-450D-A227-755D9D2F6E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480A7D53-D645-450D-A227-755D9D2F6E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480A7D53-D645-450D-A227-755D9D2F6E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82B4ED3-3208-48B9-B9D9-1DAD20CC58C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82B4ED3-3208-48B9-B9D9-1DAD20CC58C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82B4ED3-3208-48B9-B9D9-1DAD20CC58C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82B4ED3-3208-48B9-B9D9-1DAD20CC58C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59C251E-45F5-4569-B357-47BE0CCE8CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59C251E-45F5-4569-B357-47BE0CCE8CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59C251E-45F5-4569-B357-47BE0CCE8CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59C251E-45F5-4569-B357-47BE0CCE8CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C12F91C-F0A9-4A70-B463-1D9F8A2555EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C12F91C-F0A9-4A70-B463-1D9F8A2555EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C12F91C-F0A9-4A70-B463-1D9F8A2555EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C12F91C-F0A9-4A70-B463-1D9F8A2555EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
