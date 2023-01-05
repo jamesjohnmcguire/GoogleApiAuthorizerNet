@@ -1,5 +1,5 @@
 ﻿// <copyright file="Tokens.cs" company="Digital Zen Works">
-// Copyright © 2022 Digital Zen Works. All Rights Reserved.
+// Copyright © 2022 - 2023 Digital Zen Works. All Rights Reserved.
 // </copyright>
 
 using Newtonsoft.Json;
