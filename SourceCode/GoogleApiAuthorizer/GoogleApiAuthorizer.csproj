@@ -8,7 +8,7 @@
 		<Authors>James John McGuire</Authors>
 		<CodeAnalysisRuleSet>../CodeAnalysis.ruleset</CodeAnalysisRuleSet>
 		<Company>Digital Zen Works</Company>
-		<Copyright>Copyright © 2022 - 2023</Copyright>
+		<Copyright>Copyright © 2022 - 2025</Copyright>
 		<Description>
 			A library for making authorization for Google API services easy.
 		</Description>
