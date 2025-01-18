@@ -1,5 +1,5 @@
 ﻿// <copyright file="GoogleApiAuthorizerTests.cs" company="Digital Zen Works">
-// Copyright © 2022 - 2023 Digital Zen Works. All Rights Reserved.
+// Copyright © 2022 - 2025 Digital Zen Works. All Rights Reserved.
 // </copyright>
 
 using DigitalZenWorks.GoogleApiAuthorizer;
@@ -77,7 +77,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				"Google Drive API File Uploader",
 				scopes);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -95,7 +95,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				null,
 				null);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -114,7 +114,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					"Google Drive API File Uploader",
 					scopes);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -134,17 +134,17 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					"Google Drive API File Uploader",
 					scopes);
 
-			Assert.NotNull(client);
+			Assert.That(client, Is.Not.Null);
 
 			using DriveService driveService = new (client);
 
 			var about = driveService.About;
 
 			var response = about.Get();
-			Assert.NotNull(response);
 
-			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
-				response);
+			Assert.That(response, Is.Not.Null);
+
+			Assert.That(response, Is.InstanceOf<AboutResource.GetRequest>());
 		}
 
 		/// <summary>
@@ -160,17 +160,16 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					"Google Drive API File Uploader",
 					scopes);
 
-			Assert.NotNull(client);
+			Assert.That(client, Is.Not.Null);
 
 			using DriveService driveService = new (client);
 
 			var about = driveService.About;
 
 			var response = about.Get();
-			Assert.NotNull(response);
+			Assert.That(response, Is.Not.Null);
 
-			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
-				response);
+			Assert.That(response, Is.InstanceOf<AboutResource.GetRequest>());
 		}
 
 		/// <summary>
@@ -195,17 +194,16 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					null,
 					false);
 
-			Assert.NotNull(client);
+			Assert.That(client, Is.Not.Null);
 
 			using DriveService driveService = new (client);
 
 			var about = driveService.About;
 
 			var response = about.Get();
-			Assert.NotNull(response);
+			Assert.That(response, Is.Not.Null);
 
-			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
-				response);
+			Assert.That(response, Is.InstanceOf<AboutResource.GetRequest>());
 		}
 
 		/// <summary>
@@ -226,17 +224,17 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					null,
 					false);
 
-			Assert.NotNull(client);
+			Assert.That(client, Is.Not.Null);
 
 			using DriveService driveService = new (client);
 
 			var about = driveService.About;
 
 			var response = about.Get();
-			Assert.NotNull(response);
 
-			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
-				response);
+			Assert.That(response, Is.Not.Null);
+
+			Assert.That(response, Is.InstanceOf<AboutResource.GetRequest>());
 		}
 
 		/// <summary>
@@ -260,7 +258,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					null,
 					false);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -285,17 +283,17 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					null,
 					null);
 
-			Assert.NotNull(client);
+			Assert.That(client, Is.Not.Null);
 
 			using DriveService driveService = new(client);
 
 			var about = driveService.About;
 
 			var response = about.Get();
-			Assert.NotNull(response);
 
-			Assert.IsInstanceOf<Google.Apis.Drive.v3.AboutResource.GetRequest>(
-				response);
+			Assert.That(response, Is.Not.Null);
+
+			Assert.That(response, Is.InstanceOf<AboutResource.GetRequest>());
 		}
 
 		/// <summary>
@@ -319,7 +317,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 					null,
 					null);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -339,7 +337,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 			BaseClientService.Initializer client =
 				authorizer.AuthorizeServiceAccount(string.Empty);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -354,7 +352,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				"Google Drive API File Uploader",
 				scopes);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -369,7 +367,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				"Google Drive API File Uploader",
 				scopes);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -386,7 +384,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				"Google Drive API File Uploader",
 				scopes);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -405,7 +403,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				null,
 				false);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -421,7 +419,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				null,
 				tokensFilePath);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -437,7 +435,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				credentialsFilePath,
 				string.Empty);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -455,7 +453,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				null,
 				tokensFilePath);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 
 		/// <summary>
@@ -473,7 +471,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 				null,
 				string.Empty);
 
-			Assert.Null(client);
+			Assert.That(client, Is.Null);
 		}
 	}
 }
