@@ -1,5 +1,5 @@
 ﻿// <copyright file="Mode.cs" company="Digital Zen Works">
-// Copyright © 2022 - 2023 Digital Zen Works. All Rights Reserved.
+// Copyright © 2022 - 2025 Digital Zen Works. All Rights Reserved.
 // </copyright>
 
 namespace DigitalZenWorks.GoogleApiAuthorizer
