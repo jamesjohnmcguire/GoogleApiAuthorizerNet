@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AnalysisMode>All</AnalysisMode>
 		<CodeAnalysisRuleSet>../CodeAnalysis.ruleset</CodeAnalysisRuleSet>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<IsTestProject>true</IsTestProject>
-		<OutputPath>$(SolutionDir)\Bin\$(Configuration)\$(Platform)</OutputPath>
 		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 
@@ -29,13 +27,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AdditionalFiles Include="../stylecop.json" />
-		<CodeAnalysisDictionary Include="../CodeAnalysis.ruleset" />
-		<None Include="../.editorconfig" Link="../.editorconfig" />
+		<ProjectReference Include="..\GoogleApiAuthorizer\GoogleApiAuthorizer.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\GoogleApiAuthorizer\GoogleApiAuthorizer.csproj" />
+		<AdditionalFiles Include="../stylecop.json" />
+		<CodeAnalysisDictionary Include="../CodeAnalysis.ruleset" />
+		<None Include="../.editorconfig" Link="../.editorconfig" />
 	</ItemGroup>
 
 </Project>
