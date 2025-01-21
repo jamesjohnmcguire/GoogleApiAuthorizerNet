@@ -2,11 +2,11 @@
 // Copyright © 2022 - 2025 Digital Zen Works. All Rights Reserved.
 // </copyright>
 
-using DigitalZenWorks.GoogleApiAuthorizer;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using NUnit.Framework;
 using System;
+using System.IO;
 
 [assembly: CLSCompliant(true)]
 
@@ -17,6 +17,7 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 	/// </summary>
 	public class GoogleApiAuthorizerTests
 	{
+		private static string testDataDirectory;
 		private string credentialsFilePath;
 		private string serviceAccountFilePath;
 		private string[] scopes = { "https://www.googleapis.com/auth/drive" };
@@ -28,14 +29,20 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		[OneTimeSetUp]
 		public void OneTimeSetUp()
 		{
-			string baseDataDirectory = Environment.GetFolderPath(
-				Environment.SpecialFolder.ApplicationData,
-				Environment.SpecialFolderOption.Create);
-			string dataPath = baseDataDirectory +
-				@"\DigitalZenWorks\GoogleApiAuthorizer";
-			credentialsFilePath = dataPath + @"\Credentials.json";
-			serviceAccountFilePath = dataPath + @"\ServiceAccount.json";
-			tokensFilePath = dataPath + @"\Tokens.json";
+			string tempPath = Path.GetTempPath();
+			Guid guid = Guid.NewGuid();
+			string guidText = guid.ToString();
+
+			testDataDirectory = Environment.GetEnvironmentVariable(
+				"GOOGLEAPIAUTHORIZER_TEST_DIRECTORY");
+
+			if (!string.IsNullOrWhiteSpace(testDataDirectory))
+			{
+				credentialsFilePath = testDataDirectory + @"\Credentials.json";
+				serviceAccountFilePath =
+					testDataDirectory + @"\ServiceAccount.json";
+				tokensFilePath = testDataDirectory + @"\Tokens.json";
+			}
 		}
 
 		/// <summary>
