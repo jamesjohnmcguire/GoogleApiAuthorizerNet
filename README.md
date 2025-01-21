@@ -11,6 +11,16 @@ A library for making authorization for Google API services easy.
 
 #### Library and API usage:
 
+#### Unit Tests
+Actually, more accurate would be to call them automated tests.  In any case, in order to have the tests succeed, you need to set an environment variable to a directory containing test files.  The environment variable is: GOOGLEAPIAUTHORIZER_TEST_DIRECTORY
+
+This test directory should contain three files of the following:
+credentials.json
+ServiceAccount.json
+tokens.json
+
+These are the authorization files provided by your Google project.
+
 ## Contributing
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
