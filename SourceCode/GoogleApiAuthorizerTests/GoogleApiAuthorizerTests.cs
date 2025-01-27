@@ -29,10 +29,6 @@ namespace DigitalZenWorks.GoogleApiAuthorizer.Tests
 		[OneTimeSetUp]
 		public void OneTimeSetUp()
 		{
-			string tempPath = Path.GetTempPath();
-			Guid guid = Guid.NewGuid();
-			string guidText = guid.ToString();
-
 			testDataDirectory = Environment.GetEnvironmentVariable(
 				"GOOGLEAPIAUTHORIZER_TEST_DIRECTORY");
 
