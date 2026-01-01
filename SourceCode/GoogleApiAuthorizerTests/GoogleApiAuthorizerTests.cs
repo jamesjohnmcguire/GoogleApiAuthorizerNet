@@ -1,5 +1,5 @@
 ﻿// <copyright file="GoogleApiAuthorizerTests.cs" company="Digital Zen Works">
-// Copyright © 2022 - 2025 Digital Zen Works. All Rights Reserved.
+// Copyright © 2022 - 2026 Digital Zen Works. All Rights Reserved.
 // </copyright>
 
 using Google.Apis.Drive.v3;
